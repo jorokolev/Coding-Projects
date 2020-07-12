@@ -1,36 +1,37 @@
-#To keep track of the kinds of pizzas you sell, create a list called toppings
-toppings = ['pepperoni', 'pineapple', 'cheese', 'sausage', 'olives', 'anchovies', 'mushrooms']
+#Let’s add in our first item, the Lovely Loveseat that is the store’s namesake and create a price for the loveseat.
+lovely_loveseat_description = "Lovely Loveseat. Tufted polyester blend on wood. 32 inches high x 40 inches wide x 30 inches deep. Red or white."
+lovely_loveseat_price = 254.00
 
-#To keep track of how much each kind of pizza slice costs, create a list called prices
-prices = [2, 6, 1, 3, 2, 7, 2]
+#Let’s extend our inventory with another characteristic piece of furniture and set the price for our Stylish Settee.
+stylish_settee_description = "Stylish Settee. Faux leather on birch. 29.50 inches high x 54.75 inches wide x 28 inches deep. Black."
+stylish_settee_price = 180.50
 
-#Find the length of the toppings list and store it in a variable called num_pizzas.
-num_pizzas = len(toppings)
+#We just need one more item before we’re ready for business and set the price for it.
+luxurious_lamp_description = "Luxurious Lamp. Glass and iron. 36 inches tall. Brown with cream shade."
+luxurious_lamp_price = 52.15
 
-#Print the string "We sell X different kinds of pizza!", with num_pizzas where the X is.
-print('We sell ' + str(num_pizzas) + ' different kinds of pizza!')
+#In order to be a business, we should also be calculating sales tax. Let’s store that in a variable as well. 
+sales_tax = .088 #That’s 8.8% tax.
 
-#Use zip to combine the two lists into a list called pizzas
-pizzas = list(zip(prices, toppings))
-pizzas.sort()
+#Our first customer is making their purchase! Let’s keep a running tally of their expenses.
+customer_one_total = 0
+customer_one_itemization = ""
 
-#Print pizzas
-print(pizzas)
+#The customer has decided they are going to purchase our Lovely Loveseat.
+customer_one_total += lovely_loveseat_price
+customer_one_itemization += lovely_loveseat_description
 
-#SStore the first element of pizzas in a variable called cheapest_pizza.
-cheapest_pizza = pizzas[1]
+#The customer has also decided to purchase the Luxurious Lamp.
+customer_one_total += luxurious_lamp_price
+customer_one_itemization += luxurious_lamp_description
 
-#Get the last item of the pizzas list and store it in a variable called priciest_pizza.
-priciest__pizza = pizzas[-1]
+#They’re ready to check out! Let’s begin by calculating sales tax.
+customer_one_tax = customer_one_total * sales_tax
+#Add the sales tax to the customer’s total cost.
+customer_one_total += customer_one_tax
 
-#Slice the pizzas list and store the 3 lowest cost pizzas in a list called three_cheapest.
-three_cheapest = pizzas[:3]
-
-#Print the three_cheapest list.
-print(three_cheapest)
-
-#Count the number of occurrences of 2 in the prices list, and store the result in a variable called
-num_two_dollar_slices = prices.count(2)
-
-#Print it out
-print(num_two_dollar_slices)
+#Add headings and print the totals for the customer:
+print("Customer One Items:")
+print(customer_one_itemization)
+print("Customer One Total")
+print(customer_one_total)
