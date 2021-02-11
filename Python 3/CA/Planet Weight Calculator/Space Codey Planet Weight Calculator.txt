@@ -1,0 +1,1 @@
+Write a python program that automatically tells Space Codey what his weight will be depending on which planet he chooses to land on.
